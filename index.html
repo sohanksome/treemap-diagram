@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treemap Diagram</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 95vh; /* Make sure body takes full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+        svg{
+            display: block;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 120px;
+            padding: 8px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.3s;
+        }
+        .node rect {
+            stroke: #fff; /* Add stroke for better visibility */
+            stroke-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Treemap Visualization</h1>
+    <p id="description">This is the tree map of three datas:</p>
+    
+    <button id="kickstarterBtn">Kickstarter</button>
+    <button id="movieSalesBtn">Movie Sales</button>
+    <button id="videoGameSalesBtn">Video Game Sales</button>
+    
+    
+    <div id="container" style="display: flex; align-items: flex-start;">
+        <div id="kickstarterTreemap" style="width: 900px; height: 500px;"></div>
+    <div id="movieSalesTreemap" style="width: 900px; height: 500px; display: none;"></div>
+    <div id="videoGameSalesTreemap" style="width: 900px; height: 500px; display: none;"></div>
+        <div id="legend" style="margin-left: 20px;"></div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
